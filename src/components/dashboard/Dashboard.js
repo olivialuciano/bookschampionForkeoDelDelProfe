@@ -38,7 +38,7 @@ const Dashboard = () => {
   const [yearFiltered, setYearFiltered] = useState("2023");
 
   useEffect(() => {
-    fetch("http://localhost:8080/userbook/traertodoslosbook", {
+    fetch("http://localhost:8080/book/traertodoslosbook", {
       headers: {
         Accept: "application/json",
       },
@@ -57,7 +57,7 @@ const Dashboard = () => {
   const addBookHandler = (book) => {
     const dateString = book.dateRead.toISOString().slice(0, 10);
 
-    fetch("http://localhost:8080/userbook/crear", {
+    fetch("http://localhost:8080/book/crear", {
       method: "POST",
       headers: {
         "content-type": "application/json",
