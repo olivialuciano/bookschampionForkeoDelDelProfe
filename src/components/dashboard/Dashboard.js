@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import NewBook from "../NewBook/NewBook";
 import BooksFilter from "../bookFilter/BookFilter";
 import Books from "../books/Books";
@@ -39,7 +38,7 @@ const Dashboard = () => {
   const [yearFiltered, setYearFiltered] = useState("2023");
 
   useEffect(() => {
-    fetch("https://63a44a012a73744b0072f847.mockapi.io/api/books/Books", {
+    fetch("http://localhost:8080/userbook/traertodoslosbook", {
       headers: {
         Accept: "application/json",
       },
@@ -58,7 +57,7 @@ const Dashboard = () => {
   const addBookHandler = (book) => {
     const dateString = book.dateRead.toISOString().slice(0, 10);
 
-    fetch("https://63a44a012a73744b0072f847.mockapi.io/api/books/Books", {
+    fetch("http://localhost:8080/userbook/crear", {
       method: "POST",
       headers: {
         "content-type": "application/json",
